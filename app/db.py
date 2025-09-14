@@ -1,4 +1,3 @@
-# app/db.py
 import psycopg
 from psycopg.rows import dict_row
 from .config import DATABASE_URL
