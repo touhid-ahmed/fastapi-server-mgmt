@@ -1,6 +1,27 @@
 # fastapi-server-mgmt
 Repository for a Python web service that provides a RESTful API for managing servers
 
+## Project Structure
+
+```
+fastapi-server-mgmt/
+├─ app/
+│  ├─ __init__.py
+│  ├─ main.py                   -> runs the FastAPI app
+│  ├─ config.py                 -> loads .env and exposes DATABASE_URL
+│  ├─ db.py                     -> psycopg connection helper and Exposes FastAPI dependency
+│  ├─ schemas.py                -> Pydantic models for requests/responses
+│  ├─ routers_servers.py        -> API endpoints for managing server
+│  └─ routers_datacenters.py    -> API endpoint for creating server in a datacenter
+├─ sql/
+│  ├─ schema.sql
+│  └─ sample_data.sql
+├─ .env.example
+├─ requirements.txt
+├─ README.md
+└─ .gitignore
+```
+
 ## Prerequisites
 - Python 3.10+
 - PostgreSQL 13+ running locally (default port 5432)

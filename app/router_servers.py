@@ -44,6 +44,7 @@ def get_server(server_id : int = Path(..., ge=1, description="Server ID"), db = 
     
     return row
 
+'''Design Decision 2: I chose PUT over PATCH for simplicity and predictable validation '''
 
 @router.put("/{server_id}", response_model=Server, status_code=200, summary="Update a server by ID")
 def update_server(
