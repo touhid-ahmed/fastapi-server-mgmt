@@ -18,3 +18,7 @@ INSERT INTO public.switch_to_server (switch_id, server_id) VALUES (1, 1);
 INSERT INTO public.switch_to_server (switch_id, server_id) VALUES (1, 2);
 INSERT INTO public.switch_to_server (switch_id, server_id) VALUES (1, 3);
 INSERT INTO public.switch_to_server (switch_id, server_id) VALUES (2, 3);
+
+SELECT pg_catalog.setval(pg_get_serial_sequence('public.server', 'id'), MAX(id)) FROM public.server;
+SELECT pg_catalog.setval(pg_get_serial_sequence('public.datacenter', 'id'), MAX(id)) FROM public.datacenter;
+SELECT pg_catalog.setval(pg_get_serial_sequence('public.switch', 'id'), MAX(id)) FROM public.switch;
